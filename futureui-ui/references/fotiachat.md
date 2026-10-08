@@ -2,7 +2,7 @@
 
 此接管需要带颜色适配器的 FotiaChat `1.1.5` 和支持 raster 的 FutureUI `0.0.3beta` 修订包。入口保持 `/chatcolor`、`/chatcolor gui`；只接管聊天颜色选择，物品、背包和末影箱快照仍使用原界面。
 
-发布包 `FutureUI-0.0.3beta-bundle.zip` 的 `menu-configs/FutureUI/` 含下述七个菜单、模板和语言文件；`menu-configs/FotiaChat/menus/color-menu.yml` 是已开启 FutureUI 的安装示例，来源为 `distribution/fotiachat/`。现有配置按键合并，不覆盖自定义颜色；`colors.yml` 仍由 FotiaChat 管理。FotiaChat 插件 JAR 需要单独更新，未启用集成时默认使用原箱子菜单。
+发布包 `FutureUI-0.0.3beta-bundle.zip` 的 `menu-configs/FutureUI/` 含下述七个菜单、模板和语言文件。FotiaChat 自身的 `menus/color-menu.yml` 不随 FutureUI 分发，由对应插件生成和维护；按下文将集成字段合并到现有配置，不覆盖自定义颜色。`colors.yml` 仍由 FotiaChat 管理。FotiaChat 插件 JAR 需要单独更新，未启用集成时默认使用原箱子菜单。
 
 ## 管理员配置
 

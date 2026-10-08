@@ -4,7 +4,7 @@
 
 ## 配置与范围
 
-FotiaCrates 首次启动自动生成 `plugins/FotiaCrates/futureui.yml`，默认 `ui-engine: inventory`；设为 `futureui` 后接管玩家奖池、GUI 抽奖动画、单抽／连抽结果和历史。管理员编辑器、物品拖入及奖励物品管理仍使用原界面。发布包 `menu-configs/FotiaCrates/futureui.yml` 提供已启用的安装示例，不覆盖原抽奖箱和钥匙配置。
+FotiaCrates 首次启动自动生成 `plugins/FotiaCrates/futureui.yml`，默认 `ui-engine: inventory`；设为 `futureui` 后接管玩家奖池、GUI 抽奖动画、单抽／连抽结果和历史。管理员编辑器、物品拖入及奖励物品管理仍使用原界面。此文件由 FotiaCrates 维护，不随 FutureUI 发布包分发；按下文修改对应插件的实际配置，保留原抽奖箱和钥匙配置。
 
 ```yaml
 ui-engine: futureui
