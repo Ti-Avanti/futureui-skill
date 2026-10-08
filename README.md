@@ -1,12 +1,12 @@
 ﻿# futureui-skill
 
-AI skill pack **`futureui-ui`** for **FutureUI 0.0.3beta** — a config-driven Minecraft GUI menu and universal shop plugin.
+AI skill pack **`futureui-ui`** for **FutureUI 1.0.0** — a config-driven Minecraft GUI menu and universal shop plugin.
 
 Turn natural language into loadable menu configs (Canvas / Dialog YAML, actions, language files, pixel assets) with Claude Code, Codex, MiMoCode, or any assistant that reads `SKILL.md`.
 
 ## Install
 
-1. Download [v0.0.3-beta](https://github.com/Ti-Avanti/futureui-skill/releases/tag/v0.0.3-beta) or clone this repository
+1. Download [v1.0.0](https://github.com/Ti-Avanti/futureui-skill/releases/tag/v1.0.0) or clone this repository
 2. Copy the `futureui-ui/` folder into your AI assistant's skills directory
    - e.g. `.mimocode/skills/futureui-ui/` or `.agents/skills/futureui-ui/`
 3. Ask your assistant to build a menu
@@ -30,7 +30,7 @@ python -B futureui-ui/scripts/check_config.py --root futureui-ui/assets/template
 
 ## Plugin baseline
 
-This release targets FutureUI `0.0.3beta`. It includes references for BasicTool, FotiaCosmetic, FotiaChat, FotiaCrates and FotiaTags integrations, horizontal viewport examples, pixel layout guidance and matching validation rules. Third-party menu data and actions require the corresponding plugin adapter; static validation does not certify live transactions or client rendering.
+This release targets FutureUI `1.0.0`. It includes references for FotiaCosmetic, FotiaChat, FotiaCrates and FotiaTags integrations, horizontal viewport examples, pixel layout guidance and matching validation rules. Third-party menu data and actions require the corresponding plugin adapter; static validation does not certify live transactions or client rendering.
 
 ## Environment
 

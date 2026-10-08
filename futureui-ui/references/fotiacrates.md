@@ -1,6 +1,6 @@
 # FotiaCrates 玩家抽奖界面
 
-需要包含可选菜单适配器的 FotiaCrates `1.1.21` 修订包和 FutureUI `0.0.3beta` 配套菜单。原命令 `/crate preview <crate>`、`/crate open <crate> [amount]`、`/crate history` 及实体抽奖入口继续使用原权限和业务服务。
+需要包含可选菜单适配器的 FotiaCrates `1.1.22` 修订包和 FutureUI `1.0.0` 配套菜单。原命令 `/crate preview <crate>`、`/crate open <crate> [amount]`、`/crate history` 及实体抽奖入口继续使用原权限和业务服务。
 
 ## 配置与范围
 

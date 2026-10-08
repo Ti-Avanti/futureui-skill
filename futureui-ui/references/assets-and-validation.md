@@ -8,7 +8,7 @@ generated/resourcepack 是完整资源包目录，generated/futureui-resource-pa
 
 字形分配保留 generated/glyph-map.json 中的历史编号，优先使用 U+E000–U+F8FF，用满后转入 U+F0000–U+FFFFD 补充私用区。新增主题不会再受所有资源共用 6,400 个编号的限制；输出为完整 Unicode 码点，不能按单个 UTF-16 char 截取。相同美术风格优先复用已有主题，避免重复生成皮肤；资源更新后仍需分发新资源包，不能仅复制 glyph-map.json。
 
-本次能力快照对应版本标记 `0.0.3beta`；独立主题能力由此前 1.1.3 引入。当前默认菜单分目录保存于 menus/standard 与 menus/compact，显式 id 仍决定菜单身份，不能仅因文件搬目录就给 open-menu 目标添加目录前缀。DefaultMenuMigration 会处理清单内的旧默认菜单文件并保留修改；自定义示例使用 demo_ 前缀，避免进入默认文件名迁移范围。
+本次能力快照对应版本标记 `1.0.0`；独立主题能力由此前 1.1.3 引入。当前默认菜单分目录保存于 menus/standard 与 menus/compact，显式 id 仍决定菜单身份，不能仅因文件搬目录就给 open-menu 目标添加目录前缀。DefaultMenuMigration 会处理清单内的旧默认菜单文件并保留修改；自定义示例使用 demo_ 前缀，避免进入默认文件名迁移范围。
 
 自 `0.0.2beta` 修订包起，启动及完整重载前会修复已发布的 BasicTool 设置模板：仅匹配 `templates/integrations/basictool/settings-panel.yml` 中已知的 scope_area 固定高度片段，将 height: 27 改为 min-height: 27；同目录 settings-panel-row.yml 的 panel_setting_row 将 height: 36 改为 min-height: 36。其余内容和换行保持不变，原文件备份到 `generated/migrations/template-layout/<唯一编号>/<原文件名>`。重复加载不会反复修改或备份；已改变该片段结构或已配置 min-height 的自定义模板不自动覆盖，应按布局参考核对动态分支的尺寸。
 

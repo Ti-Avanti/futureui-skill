@@ -2,7 +2,7 @@
   "catalog_version": 2,
   "baseline": {
     "plugin": "FutureUI",
-    "plugin_version": "0.0.3beta",
+    "plugin_version": "1.0.0",
     "config_version": 1,
     "captured_on": "2026-10-08",
     "source_fingerprints": {
@@ -30,8 +30,8 @@
       "src/main/java/gg/fotia/futureui/i18n/TextService.java": "f56fac790e570811efc25be7b9af4bd9f8aa85a380a35dc4fc368d95b42a8d71",
       "src/main/java/gg/fotia/futureui/data/BuiltinDataSources.java": "9fa3da66fedce0954ed8863b19e318de93adfeff42dda3703655704e17b466f7",
       "src/main/java/gg/fotia/futureui/command/MenuDiagnostics.java": "d536ea23958b64d3972fe5784050ad64cb2f6ac725444d6138c7ca35e29f3525",
-      "pom.xml": "c7903875aa65c7598f892ac7a5386b52733a71f2b2b2cda991c4d50671aa34c4",
-      "src/main/resources/plugin.yml": "4f30c46a1b8bd36dfa07110b8ceffc8e90b02a56a9390de35d7f9f66e1cf1995",
+      "pom.xml": "901a85800e8f5fa1ef8b953eb96ffd4b13200596c9ee8434b329390f5f66ff27",
+      "src/main/resources/plugin.yml": "cb314c807c39c4c8b034a816f11b992bcaf6c27ea1585962b30c62e168025652",
       "src/main/resources/assets/theme.yml": "3efa078f7030d15dc88ed88df3be14e1b468f7280f4d5e3d2c21d288edc19185",
       "src/main/resources/assets/versions.yml": "055c292eecf2282a2c34214817d53a0d7857b232db3459963a7e3078e8b60aad",
       "src/main/java/gg/fotia/futureui/config/AssetConfiguration.java": "50f0ca5c56fef271f53e4944908e86f6876b665a901e0c68bb5108b70c4e9570",
@@ -2732,7 +2732,7 @@
     },
     "FotiaChat": {
       "owner": "FotiaChat",
-      "owner_version": "1.1.5 with the FutureUI color adapter",
+      "owner_version": "1.1.6 with the FutureUI color adapter",
       "required_api": [
         "FutureUIService.canRender",
         "FutureUIService.isOpen",
@@ -2857,7 +2857,7 @@
     },
     "FotiaCrates": {
       "owner": "FotiaCrates",
-      "owner_version": "1.1.21 with FutureUI adapter",
+      "owner_version": "1.1.22 with FutureUI adapter",
       "configured_in": "plugins/FotiaCrates/futureui.yml",
       "engine_field": "ui-engine",
       "engines": [
@@ -3010,7 +3010,7 @@
     },
     "FotiaTags": {
       "owner": "FotiaTags",
-      "owner_version": "1.1.2 with FutureUI adapter",
+      "owner_version": "1.1.3 with FutureUI adapter",
       "configured_in": "plugins/FotiaTags/menus/<view>.yml; plugins/FotiaTags/futureui.yml",
       "engine_field": "ui-engine",
       "engines": [

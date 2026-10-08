@@ -1,6 +1,6 @@
 # FotiaTags 玩家菜单
 
-需要 FotiaTags `1.1.2` 的 FutureUI 适配修订包及 FutureUI `0.0.3beta` 配套菜单。保留原 `/tags menu`、`/tags custom`、`/tags effects`、`/tags effects shop` 入口。
+需要 FotiaTags `1.1.3` 的 FutureUI 适配修订包及 FutureUI `1.0.0` 配套菜单。保留原 `/tags menu`、`/tags custom`、`/tags effects`、`/tags effects shop` 入口。
 
 ## 开关与范围
 

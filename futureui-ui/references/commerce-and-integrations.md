@@ -262,7 +262,7 @@ rank:
 
 FotiaChat 颜色菜单的配置入口见 [FotiaChat 接管配置与扩展契约](fotiachat.md)。第三方插件的显示引擎在各自配置中启用。
 
-FutureUI `0.0.3beta` 的 `-bundle.zip` 提供插件 JAR 和 `menu-configs/FutureUI/`，后者从 `src/main/resources/` 收集 BasicTool、FotiaCosmetic、FotiaChat、FotiaCrates、FotiaTags 的接入菜单、模板、语言文件与所需资源配置，与 JAR 内置资源一致。按目录合并到 FutureUI 数据文件夹；已有自定义配置先比较再合并，JAR 不会替其他插件切换引擎。本地 `distribution/` 中的第三方配置快照不提交到 FutureUI 仓库，也不进入发布包或本 Skill 的必需源码指纹。其他插件的菜单、语言、预览与集成配置由对应插件生成和维护，按下述真实配置入口启用；不假设下载包自带已开启接管的第三方配置。
+FutureUI `1.0.0` 的 `-bundle.zip` 提供插件 JAR 和 `menu-configs/FutureUI/`，后者从 `src/main/resources/` 收集 BasicTool、FotiaCosmetic、FotiaChat、FotiaCrates、FotiaTags 的接入菜单、模板、语言文件与所需资源配置，与 JAR 内置资源一致。按目录合并到 FutureUI 数据文件夹；已有自定义配置先比较再合并，JAR 不会替其他插件切换引擎。本地 `distribution/` 中的第三方配置快照不提交到 FutureUI 仓库，也不进入发布包或本 Skill 的必需源码指纹。其他插件的菜单、语言、预览与集成配置由对应插件生成和维护，按下述真实配置入口启用；不假设下载包自带已开启接管的第三方配置。
 
 需要支持统一菜单的 FotiaCosmetic 和支持 raster 的 FutureUI。显示引擎统一在 FotiaCosmetic 的 menus/main.yml 设置；menus/weapons.yml 仅提供普通武器分类和图标状态，menus/legendary.yml 提供独立于物品插件的传奇分类。
 
