@@ -55,3 +55,19 @@ demo_switch 是控件模板，按 demo_settings 中的单项静态列表方式�
 `menus/fotiacosmetic/main.yml`、`menus/fotiacosmetic/weapons.yml` 共用 `templates/integrations/fotiacosmetic/` 的 page、preview、entry 模板和 adventure 主题。两页均由原 `/fc` 入口及页签进入，管理员在 FotiaCosmetic 原菜单内设置 `ui-engine: futureui`。左侧显示玩家当前穿戴和真实皮肤（缺失时明确标注默认人形），并提供独立脱下按钮；右侧为可直接点击的两列两行缩略图，每页四项已拥有时装。分类固定为一行，每页五项，左右箭头切换七个外观分类或九个武器分类，不堆叠多行。点击缩略图直接穿戴并刷新左侧，无待确认预览步骤。另有 `main_compact/weapons_compact` 与对应 `_compact` 模板，每页两项、单行两个分类；通过原菜单或 `/fc layout compact|standard` 切换并记忆，默认紧凑布局。
 
 这些页面需要有效的 FotiaCosmetic 服务端会话，不可通过 `/fui open` 冒充。模型使用 FotiaCosmetic 的外置 `futureui-preview.yml` 与 `previews/`，插件不内置任何用户提供的测试模型。具体路径、字段、状态与限制见[商店与集成](commerce-and-integrations.md#fotiacosmetic-可选菜单接管)。
+
+## 插件随附的 FotiaChat 颜色菜单
+
+`menus/fotiachat/colors.yml` 和 `colors_compact.yml` 共用 `templates/integrations/fotiachat/color.yml` 色条组件及 adventure 主题；标准三列九项，紧凑两列四项。从 `/chatcolor` 进入并使用真实颜色权限和保存逻辑，不是独立演示数据。管理员在原 color-menu.yml 选择显示引擎。配置、字段、操作和关闭生命周期见 [FotiaChat 颜色菜单](fotiachat.md)。
+
+## 插件随附的 FotiaCrates 抽奖菜单
+
+`menus/fotiacrates/standard.yml` 和 `compact.yml` 使用 adventure 主题，从 `/crate preview <crate>` 等原入口进入。顶部信息、全宽奖品区和底部操作栏内切换奖池、历史和结果；提供真实钥匙、分档保底、单抽／连抽、轮盘及分页结果。管理员在 FotiaCrates/futureui.yml 选择引擎。配置、图片和会话契约见 [FotiaCrates 抽奖菜单](fotiacrates.md)。
+
+## 连续滚动示例
+
+`starter/menus/demo_scroll.yml` 是三格连续物品展示，配合 `assets/viewports.yml`、demo 主题、demo 图片和对应语言键。motion 以 120 tick 滚过五项，末尾重复首屏内容实现循环衔接；重新播放和关闭按钮保持固定。无需 FotiaCrates 适配器；生产菜单可改用数据源和 position 绑定。
+
+## FotiaTags 玩家菜单
+
+八个玩家页面的开关、称号草稿、效果购买和标准／紧凑布局见 [FotiaTags 接管](fotiatags.md)。默认配置来自 `menus/fotiatags/` 与 `templates/integrations/fotiatags/`；数据和动作需要 FotiaTags 原入口建立会话。

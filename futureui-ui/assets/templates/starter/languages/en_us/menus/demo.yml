@@ -1,4 +1,3 @@
-# 示例配置；共享业务数值由 demo_workspace.defaults 提供。
 detail:
   title: <!i><gold>CONFIRM PURCHASE
   balance: '<!i><gray>Your balance: <green>{product.balance}'
@@ -175,3 +174,12 @@ variables:
     Only trusted configuration is explicitly expanded.'
   resolve: <!i>Resolve and display
   result: '<!i>Resolved balance: <green>{expand:demo.chain}'
+scroll:
+  title: <!i>Item carousel
+  stone: <!i>Stone
+  planks: <!i>Oak planks
+  glass: <!i>Glass
+  sandstone: <!i>Sandstone
+  bread: <!i>Bread
+  restart: <!i>Restart
+  close: <!i>Close

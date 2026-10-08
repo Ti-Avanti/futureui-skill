@@ -78,7 +78,9 @@ def measure(work, nodes, settings, width, path, depth=0):
                 rows.append(current)
                 current = 0
             kind = node.get("type", "text")
-            if "children" in node:
+            if kind == "viewport":
+                intrinsic = _int(node, "height", 99)
+            elif "children" in node:
                 intrinsic = measure(work, node["children"], node, available, at, depth + 1)
                 if intrinsic is None:
                     unknown = True

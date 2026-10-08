@@ -165,7 +165,7 @@ Options:
   permission: basictool.settings
 ```
 
-`menu` 留空按 `basictool/<组>/<原菜单 ID>` 推导。缺少 FutureUI、接口或指定菜单，或者客户端不支持当前渲染策略时，使用原库存菜单；FutureUI 拒绝权限、条件或取消打开事件时不绕过检查。资源包等待中的打开保留会话，收到成功回执后再显示。各页可以选择不同引擎；动作跳转仍读取目标页配置。
+`menu` 留空按 `basictool/<组>/<原菜单 ID>` 推导。缺少 FutureUI、接口或指定菜单，或者客户端不支持当前渲染策略时，使用原库存菜单；FutureUI 拒绝权限、条件或取消打开事件时不绕过检查。菜单直接打开，不因缺少资源包回执进入等待状态。各页可以选择不同引擎；动作跳转仍读取目标页配置。
 
 内置适配布局在 `menus/basictool/` 与 `templates/integrations/basictool/`，新增安装会自动释放；已有文件不覆盖。布局保留独立 `adventure` 主题 ID，外观采用基岩版灰阶面板、绿色选中态和原版像素图标。个人设置、个人战绩、我的票券共用顶部功能页签、左侧导航、按钮规格及数值底板。颜色、间距和按钮规格修改 FutureUI 模板；原 `Icons/condition/actions`、数据配置、刷新频率、隐私与玩家设置仍由 BasicTool 负责。
 
@@ -186,13 +186,13 @@ Options:
 - `page`：单行页面信息，含 `title/subject/self/scope/has-scope/page/pages/count/empty/has-navigation/navigation-paged/has-controls/home/menu/group/source`。`self` 按目标 UUID 与查看者 UUID 比较，不依赖名称或昵称。
 - 其他视图：含 `control/label/plain-label/detail/value/has-value/selected/enabled/choice/left/primary-click/right/static-action/inherited/kind`。`label/detail/value` 是文本组件，`plain-label/plain-detail` 是纯文本；`control` 是不应由配置伪造的原按钮标识。
 - `left` 表示存在主操作，实际点击类型取 `primary-click`；`right` 仅在左右动作确实不同且都有动作时为 true。`enabled` 包含原编辑状态、忙碌状态和翻页边界。
-- 动作 `operation`：`opened/closed/home/navigate/click/choose/select`。组件动作带 `control: '{item.control}'`，主动作带 `click: '{item.primary-click}'`；副动作 `click: right`。页面 `on-open/on-close` 必须保留对应 `opened/closed`，用于资源等待与原关闭事件的生命周期。
+- 动作 `operation`：`opened/closed/home/navigate/click/choose/select`。组件动作带 `control: '{item.control}'`，主动作带 `click: '{item.primary-click}'`；副动作 `click: right`。页面 `on-open/on-close` 必须保留对应 `opened/closed`，用于接管会话与原关闭事件的生命周期。
 
 适配器要求由原入口创建的服务端 `basictool.session`，不能手写令牌或用 `/futureui open basictool/...` 替代原入口。动作会重新检查当前玩家、页面、目标隐私、权限、原条件和按钮快照，再调用原业务动作。列表只是展示，不用 console 命令替代设置或发券接口。
 
 ### API 打开状态
 
-在服务端主线程调用 `canRender(player, menu)` 仅查询菜单存在和客户端渲染支持，不代表已获得权限、满足条件或加载材质包。仍须使用 `open` 执行完整检查。`isOpen(player, menu, arguments)` 匹配活动或等待资源包的会话及所给参数子集；`open` 返回 false 时可据此区分资源等待与拒绝。完成后关闭自己持有的会话，避免关闭别的插件后来打开的菜单。
+在服务端主线程调用 `canRender(player, menu)` 仅查询菜单存在和客户端渲染支持，不代表已获得权限、满足条件或加载材质包。仍须使用 `open` 执行权限、条件及打开事件检查；没有资源包回执不会阻止打开。`isOpen(player, menu, arguments)` 只匹配活动会话及所给参数子集；不再存在等待资源包的会话，不能把 `open` 返回 false 解释为正在加载资源。完成后关闭自己持有的会话，避免关闭别的插件后来打开的菜单。
 
 ### BasicTool 设置交互与可视化数据
 
@@ -260,7 +260,9 @@ rank:
 
 ## FotiaCosmetic 可选菜单接管
 
-FutureUI `0.0.2beta` 的 `-bundle.zip` 同时提供插件 JAR 和 `menu-configs/`。其中 `FutureUI/` 保存六个菜单入口、十二个模板、中英语言文件及 adventure 主题，均与 JAR 内置资源一致；`FotiaCosmetic/` 保存三个菜单配置、九种语言及空模型映射的 `futureui-preview.yml`。后者是发布时保存的配置快照，示例的 `menus/main.yml` 已设 `ui-engine: futureui`，需要支持统一衣柜的 FotiaCosmetic `1.0.2` 或后续兼容版本。按目录合并到各插件的数据文件夹；已有自定义配置先比较再合并，JAR 不会自动覆盖已有菜单或替其他插件切换引擎。FutureUI 侧配置来源是 `src/main/resources/`，FotiaCosmetic 快照来源是 `distribution/fotiacosmetic/`，后续调整集成配置时应一并复核；正常 Maven `package` 会重新生成包含配置的发布包。
+同一发布包也包含 FotiaChat 颜色菜单的安装配置，详见 [FotiaChat 接管配置与扩展契约](fotiachat.md)。下文的文件数量仅统计 FotiaCosmetic。
+
+FutureUI `0.0.3beta` 的 `-bundle.zip` 同时提供插件 JAR 和 `menu-configs/`。其中 `FutureUI/` 保存 BasicTool、FotiaCosmetic、FotiaChat、FotiaCrates、FotiaTags 的接入菜单、模板、语言文件与所需主题，均与 JAR 内置资源一致；`FotiaCosmetic/` 保存三个菜单配置、九种语言及空模型映射的 `futureui-preview.yml`。后者是发布时保存的配置快照，示例的 `menus/main.yml` 已设 `ui-engine: futureui`，需要支持统一衣柜的 FotiaCosmetic `1.0.2` 或后续兼容版本。按目录合并到各插件的数据文件夹；已有自定义配置先比较再合并，JAR 不会自动覆盖已有菜单或替其他插件切换引擎。FutureUI 侧配置来源是 `src/main/resources/`，FotiaCosmetic 快照来源是 `distribution/fotiacosmetic/`，后续调整集成配置时应一并复核；正常 Maven `package` 会重新生成包含配置的发布包。
 
 需要支持统一菜单的 FotiaCosmetic 和支持 raster 的 FutureUI。显示引擎统一在 FotiaCosmetic 的 menus/main.yml 设置；menus/weapons.yml 仅提供普通武器分类和图标状态，menus/legendary.yml 提供独立于物品插件的传奇分类。
 

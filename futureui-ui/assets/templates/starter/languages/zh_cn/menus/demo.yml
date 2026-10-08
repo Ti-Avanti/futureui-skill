@@ -1,4 +1,3 @@
-# 示例配置；共享业务数值由 demo_workspace.defaults 提供。
 detail:
   title: <!i><gold>购买确认
   balance: <!i><gray>当前余额：<green>{product.balance}
@@ -173,3 +172,12 @@ variables:
     显式展开可信配置，保持玩家输入保护。'
   resolve: <!i>解析并显示
   result: <!i>解析后的余额：<green>{expand:demo.chain}
+scroll:
+  title: <!i>物品滚动展示
+  stone: <!i>石头
+  planks: <!i>橡木木板
+  glass: <!i>玻璃
+  sandstone: <!i>砂岩
+  bread: <!i>面包
+  restart: <!i>重新播放
+  close: <!i>关闭

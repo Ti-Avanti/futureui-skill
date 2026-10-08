@@ -6,9 +6,11 @@
 
 generated/resourcepack 是完整资源包目录，generated/futureui-resource-pack.zip 是独立可分发 ZIP；它们始终由 FutureUI 生成。选择 CraftEngine 后端时再发布合包副本，external 后端不发布到 CraftEngine。不要直接修改生成产物来交付长期菜单定制。对 images.yml/theme.yml/config.yml 等共享文件提供键级合并增量；新增普通菜单文件可单独安装。
 
-本次能力快照对应版本标记 `0.0.2beta`；独立主题能力由此前 1.1.3 引入。当前默认菜单分目录保存于 menus/standard 与 menus/compact，显式 id 仍决定菜单身份，不能仅因文件搬目录就给 open-menu 目标添加目录前缀。DefaultMenuMigration 会处理清单内的旧默认菜单文件并保留修改；自定义示例使用 demo_ 前缀，避免进入默认文件名迁移范围。
+字形分配保留 generated/glyph-map.json 中的历史编号，优先使用 U+E000–U+F8FF，用满后转入 U+F0000–U+FFFFD 补充私用区。新增主题不会再受所有资源共用 6,400 个编号的限制；输出为完整 Unicode 码点，不能按单个 UTF-16 char 截取。相同美术风格优先复用已有主题，避免重复生成皮肤；资源更新后仍需分发新资源包，不能仅复制 glyph-map.json。
 
-`0.0.2beta` 修订包在启动及完整重载前会修复已发布的 BasicTool 设置模板：仅匹配 `templates/integrations/basictool/settings-panel.yml` 中已知的 scope_area 固定高度片段，将 height: 27 改为 min-height: 27；同目录 settings-panel-row.yml 的 panel_setting_row 将 height: 36 改为 min-height: 36。其余内容和换行保持不变，原文件备份到 `generated/migrations/template-layout/<唯一编号>/<原文件名>`。重复加载不会反复修改或备份；已改变该片段结构或已配置 min-height 的自定义模板不自动覆盖，应按布局参考核对动态分支的尺寸。
+本次能力快照对应版本标记 `0.0.3beta`；独立主题能力由此前 1.1.3 引入。当前默认菜单分目录保存于 menus/standard 与 menus/compact，显式 id 仍决定菜单身份，不能仅因文件搬目录就给 open-menu 目标添加目录前缀。DefaultMenuMigration 会处理清单内的旧默认菜单文件并保留修改；自定义示例使用 demo_ 前缀，避免进入默认文件名迁移范围。
+
+自 `0.0.2beta` 修订包起，启动及完整重载前会修复已发布的 BasicTool 设置模板：仅匹配 `templates/integrations/basictool/settings-panel.yml` 中已知的 scope_area 固定高度片段，将 height: 27 改为 min-height: 27；同目录 settings-panel-row.yml 的 panel_setting_row 将 height: 36 改为 min-height: 36。其余内容和换行保持不变，原文件备份到 `generated/migrations/template-layout/<唯一编号>/<原文件名>`。重复加载不会反复修改或备份；已改变该片段结构或已配置 min-height 的自定义模板不自动覆盖，应按布局参考核对动态分支的尺寸。
 
 ## 可选分发后端
 
@@ -24,7 +26,6 @@ CraftEngine 是软依赖；packetevents 仍是硬依赖。config.yml 的 `resour
 # config.yml 合并增量；替换为实际托管地址。
 resources:
   backend: external
-  require-pack: true
   external:
     url: 'https://cdn.example.com/futureui-resource-pack.zip?v={sha1}'
     verify-pack-path: ''
@@ -35,11 +36,11 @@ resources:
 
 `/fui pack` 生成独立 ZIP，并在消息中显示路径及当前后端；`/fui status` 可查看后端、客户端协议、覆盖层和资源包加载状态。external 不自动上传，也不启动 HTTP 服务。将 ZIP 上传到实际托管服务，直链必须提供与本地校验文件相同的内容；支持 `{sha1}` 和 `{uuid}` 地址占位符，客户端 UUID 按文件 SHA-1 推导。
 
-`verify-pack-path` 留空时检查独立 ZIP；手动与其它资源合包时指定最终 ZIP 的本地路径，相对路径以 FutureUI 数据目录为基准。合包须保留覆盖层、字体、着色器及构建收据。`send-on-join` 控制主动发送；关闭后仍可在打开图形菜单时按需发送。`required: true` 会让拒绝资源包的客户端断开连接，按服务器需求选择。
+`verify-pack-path` 留空时检查独立 ZIP；手动与其它资源合包时指定最终 ZIP 的本地路径，相对路径以 FutureUI 数据目录为基准。合包须保留覆盖层、字体、着色器及构建收据。`send-on-join` 控制主动发送；关闭后打开菜单也不会触发补发，由管理员安排资源包分发。`required: true` 会让拒绝资源包的客户端断开连接，按服务器需求选择。
 
-下载地址留空不会阻止插件启动或 ZIP 生成，但不能发送资源包。`resources.require-pack: true` 且 `compatibility.pack-fallback: wait` 时等待资源就绪后打开菜单；设为 native 可使用无需资源包的原生 Dialog，仍要求客户端支持 Dialog 协议。原生模式不承诺保留 Canvas 美术效果。不要通过关闭 require-pack 来冒充资源已经加载。
+下载地址留空不会阻止插件启动、ZIP 生成或菜单打开，但不能发送资源包。菜单不再检查玩家是否返回本插件预期的资源包加载回执，不弹出缺包提示，不排队等待，也不因缺少回执切换为原生界面。旧 `resources.require-pack`、`compatibility.pack-fallback` 和菜单 `fallbacks.pack` 已停用，旧配置保留这些键也不会恢复拦截；新配置不再生成这些选项。回执仅用于资源发送去重、诊断和成功加载后的界面刷新，不能据此推断玩家本地是否手动安装了材质包。客户端协议、版本覆盖层策略、权限、条件与打开事件检查仍然保留；管理员仍需提供对应字体和着色器，跳过回执检查不会替玩家安装资源包。
 
-`resources.build-command/resend-command/expected-pack-uuid` 及 versions.yml 的 craftengine 段仅用于 CraftEngine 后端。重新载入配置时后端会重新选择；外部资源内容变化后须更新托管文件，并以本次资源包的成功加载回执恢复图形菜单。
+`resources.build-command/resend-command/expected-pack-uuid` 及 versions.yml 的 craftengine 段仅用于 CraftEngine 后端。重新载入配置时后端会重新选择；外部资源内容变化后须更新托管文件。菜单打开不依赖本次资源包的成功加载回执。
 
 ## PNG 与命名
 

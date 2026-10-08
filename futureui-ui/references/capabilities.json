@@ -2,16 +2,16 @@
   "catalog_version": 2,
   "baseline": {
     "plugin": "FutureUI",
-    "plugin_version": "0.0.2beta",
+    "plugin_version": "0.0.3beta",
     "config_version": 1,
-    "captured_on": "2026-10-06",
+    "captured_on": "2026-10-08",
     "source_fingerprints": {
-      "src/main/java/gg/fotia/futureui/config/ConfigFields.java": "3236e0b9a4f951b1a8ebb75257632fbb0e11b8f802f937c6269193fdacdb0724",
-      "src/main/java/gg/fotia/futureui/config/MenuValidator.java": "9b4df3c28356346dc85f6eedb8e25c6fa944c0f5c5aba0d9f5e09e24c59963be",
+      "src/main/java/gg/fotia/futureui/config/ConfigFields.java": "1b3a5a3e8f4cb026c9dffc0032a3f50bc983d06b967dec54882bb29dff25f1a2",
+      "src/main/java/gg/fotia/futureui/config/MenuValidator.java": "e3c2d42643c6f5f24348e6d87de0119e5517349366326540e8714dce4873c839",
       "src/main/java/gg/fotia/futureui/config/LayoutValidator.java": "75353baad13ddf88f77ffd0c942646ed802c6918de7063513fc606da5733aacf",
       "src/main/java/gg/fotia/futureui/config/ActionValidator.java": "d74c38765f038e15a2611a92912391d852432e91e44b7c77a7be0f85a3fd414f",
       "src/main/java/gg/fotia/futureui/config/ConditionValidator.java": "9d13aaeaf40edad933c8d57f192b762c5f8db086ab5718f771831a869664dfb1",
-      "src/main/java/gg/fotia/futureui/config/ConfigRepository.java": "34409f055d22f11a2661abb4fabeeaa9e9cf1330cd85f15487173d3785f21b79",
+      "src/main/java/gg/fotia/futureui/config/ConfigRepository.java": "221ddcbb57393716e2e0d43d3bec1f2fe072ffd9b39b4ebfa66684773e2fd6ec",
       "src/main/java/gg/fotia/futureui/config/Node.java": "b9ae1c0ffe8e22e697bd4d7063c4c14277d4af45f6ce5d7c9679415b21fd7b74",
       "src/main/java/gg/fotia/futureui/action/ActionEngine.java": "b31c060f73792c341133044e0e4dd39757fe141eb5ba245174d8295ff318bee4",
       "src/main/java/gg/fotia/futureui/action/TransactionActions.java": "352d776de596ca3b97fac39b5ddb230c5b7f14eac05eefc4e3f53deeb9c6d7c7",
@@ -19,10 +19,10 @@
       "src/main/java/gg/fotia/futureui/form/NumericRange.java": "05af0a0718b36e49c3f0d654451434b1518c3c84f76907a2350c2b96438822f9",
       "src/main/java/gg/fotia/futureui/form/InputCapture.java": "70fe130e7923a8728fe07d1681d7c0ca0fbe579c959dfaa61267c0b4b5c90f3f",
       "src/main/java/gg/fotia/futureui/placeholder/PlaceholderResolver.java": "143f0797cfc50b08054ef6629a4b5202e2db760611df2ec97fb0957fb21a3530",
-      "src/main/java/gg/fotia/futureui/asset/ResourcePackCompiler.java": "58ed050bb884dfa04431d915d9bef152342b9f356692db2f903e81fc5500417d",
-      "src/main/java/gg/fotia/futureui/asset/CanvasImageCompiler.java": "3c23a987a12848344c22715846042e9957d6658f9e1ae1b66ff50916bd8245aa",
+      "src/main/java/gg/fotia/futureui/asset/ResourcePackCompiler.java": "a09c12cf892d6b3ceb4d60a7e0bb2bc1b49835b5053be5cc629854844bc207f1",
+      "src/main/java/gg/fotia/futureui/asset/CanvasImageCompiler.java": "691d814366b0abc9a843391bf0b644bdbad91cc775092f8989155b26b5664c11",
       "src/main/java/gg/fotia/futureui/asset/ResourcePackFiles.java": "e2dce13b567bdb6c81a7ff462af9ce234dde7860e2f5430846a62615eafe695c",
-      "src/main/java/gg/fotia/futureui/render/CanvasPainter.java": "8ac4661398987d747661f01fb4db306710c95c67576cd5b6810ae3081dbd98f6",
+      "src/main/java/gg/fotia/futureui/render/CanvasPainter.java": "22380825ed89268762434e7db62841c032b4c878d83f6482d422e862b39d1613",
       "src/main/java/gg/fotia/futureui/render/MenuBindings.java": "9a4e551b3cf1cbb698eb0a4699b999d7f06e63d21c11dd0d730d5eaf4efc08bb",
       "src/main/java/gg/fotia/futureui/shop/ShopProductValues.java": "1fe090b9666ac6af77034761afdec1e7df46c3cd645ab75166316be27347f998",
       "src/main/java/gg/fotia/futureui/shop/ShopOperations.java": "bc1c3db8e49d09ab736faa9c457bec6b0596cf1647480ade51f4ce49d96766a7",
@@ -30,15 +30,15 @@
       "src/main/java/gg/fotia/futureui/i18n/TextService.java": "f56fac790e570811efc25be7b9af4bd9f8aa85a380a35dc4fc368d95b42a8d71",
       "src/main/java/gg/fotia/futureui/data/BuiltinDataSources.java": "9fa3da66fedce0954ed8863b19e318de93adfeff42dda3703655704e17b466f7",
       "src/main/java/gg/fotia/futureui/command/MenuDiagnostics.java": "d536ea23958b64d3972fe5784050ad64cb2f6ac725444d6138c7ca35e29f3525",
-      "pom.xml": "34f3a7ddd3df27fdb78dcaeeeed9a1b5f568a53a40efba95da60128bda612da4",
-      "src/main/resources/plugin.yml": "8f4c8b2c624992cec865ab461278aa23175ff9a3ae6a04ba31a19f495c18dec3",
+      "pom.xml": "c7903875aa65c7598f892ac7a5386b52733a71f2b2b2cda991c4d50671aa34c4",
+      "src/main/resources/plugin.yml": "4f30c46a1b8bd36dfa07110b8ceffc8e90b02a56a9390de35d7f9f66e1cf1995",
       "src/main/resources/assets/theme.yml": "3efa078f7030d15dc88ed88df3be14e1b468f7280f4d5e3d2c21d288edc19185",
       "src/main/resources/assets/versions.yml": "055c292eecf2282a2c34214817d53a0d7857b232db3459963a7e3078e8b60aad",
-      "src/main/java/gg/fotia/futureui/config/AssetConfiguration.java": "69ac0d402473b0594b1db67c3da3a6b6cfae2d21c7f8e89b1318182ce70a5005",
+      "src/main/java/gg/fotia/futureui/config/AssetConfiguration.java": "50f0ca5c56fef271f53e4944908e86f6876b665a901e0c68bb5108b70c4e9570",
       "src/main/java/gg/fotia/futureui/asset/MenuThemeAssets.java": "b5dbb6ab208a2e111b313d3a66f0b8ebd51a36a149b883e7969c0e8cf8807f51",
-      "src/main/java/gg/fotia/futureui/asset/CanvasInteractionCompiler.java": "be511abc40097c5bcf7ef070f5b0adfcb8a056e57827b63ec2a5942f76938e7f",
+      "src/main/java/gg/fotia/futureui/asset/CanvasInteractionCompiler.java": "87cea92e4d8bc88311e481912464befb005c068f08cd4970ebcacab28bf5b815",
       "src/main/java/gg/fotia/futureui/render/MenuTheme.java": "2911a362e194b61b45d998d14c2533ec249ce02e8ece61ef21747803318be10e",
-      "src/main/java/gg/fotia/futureui/render/PixelCanvas.java": "e4c12168868dad65608d49005c30c1729e39f784a5edaa23ad23c9362320f124",
+      "src/main/java/gg/fotia/futureui/render/PixelCanvas.java": "340a62d4f03687c3c793cb9d51d8759094e25f764e73c8d81a1c537ca3bd1e42",
       "src/main/java/gg/fotia/futureui/render/ViewCompiler.java": "9363642ddd37f3ceee282ed867a2d6c6334c85338e6fd522f1be213891ad82ae",
       "src/main/java/gg/fotia/futureui/shop/QuantityRule.java": "bbe2852ecb16f2fafa5148e24e666f26ca97480026bc07964dd3c6818bfe08f7",
       "src/main/java/gg/fotia/futureui/render/CanvasRenderer.java": "218fb22b7c7573384e24d0182a65f585c80e111dac5a60374b1ccc513f08062d",
@@ -50,9 +50,9 @@
       "src/main/java/gg/fotia/futureui/render/ShopViewBuilder.java": "530fe64a7e337ed9356d0513b2f6340ba59fd830061887369dacb6be64be4553",
       "src/main/java/gg/fotia/futureui/action/DataActions.java": "df2adfb3a8cb2996bcc999466a5289b32ef0f448be8c5b3d26f5ce262e0da4d5",
       "src/main/java/gg/fotia/futureui/condition/ValueResolver.java": "f4d891048b1983b700fcb3f4342962666084fe5435f6a765c2cc0c70dccc0a9f",
-      "src/main/resources/config.yml": "a88d2fb7c29ead6695998758af11e6581890e9dd520eca563b8868e2ce235276",
-      "src/main/java/gg/fotia/futureui/FutureUIPlugin.java": "9c2b404091dd651f7e6b8751cc146a54ad53dfc0d48779c380faa76ba632f77b",
-      "src/main/java/gg/fotia/futureui/menu/MenuController.java": "0875faf48a70b6e9c7ce1c4bedf517b2d4f0e250d20d1ce647b3ecdfaeb290d4",
+      "src/main/resources/config.yml": "708e07a01907c21b926da2a867e5e0987ab80f7bb727b0d44476827c03d2dcc8",
+      "src/main/java/gg/fotia/futureui/FutureUIPlugin.java": "1c9b8360469e83d219ea135e015b988305622e8547734a85a7cc2d1774b235e3",
+      "src/main/java/gg/fotia/futureui/menu/MenuController.java": "21d15a00f4a5133edb10ed3416380506164f99d7c9c89b15e96283eecf15b5bf",
       "src/main/java/gg/fotia/futureui/asset/ResourcePackArchive.java": "6d55badd50eafc0f840b9baa986628bcab14c9034b512f62915fb24e7b986b10",
       "src/main/java/gg/fotia/futureui/asset/CraftEnginePackPublisher.java": "d7c61715a57bafdce2bcc66587019a0f0a81aa460f8526772b71e29c055070bd",
       "src/main/java/gg/fotia/futureui/asset/PackDelivery.java": "6bafc135ab21361487f9c4c07fd59f7f1a52fe2c8efb2f0eb6892a5ee1a68af4",
@@ -62,13 +62,13 @@
       "src/main/java/gg/fotia/futureui/integration/PackReceiptListener.java": "19c6f448be1340f722d4e89734f81703609656be8ff66d807026bd041834a32d",
       "src/main/java/gg/fotia/futureui/integration/items/ItemIntegrations.java": "b2ce395088d9484fe9c77bb80bf8456f095a2136a14f0f764043eb099953e766",
       "src/main/java/gg/fotia/futureui/integration/items/CraftEngineProvider.java": "1e6bdb1235e5231dc614990b22ff99d75b453f9aa30d1c6fe5b6406e214264f8",
-      "src/main/java/gg/fotia/futureui/api/FutureUIService.java": "f40b04757c277ed4b4446283647c8e366b6f1827e00d1dea0c4ae684c416d791",
+      "src/main/java/gg/fotia/futureui/api/FutureUIService.java": "c854e49971d0b30e4a984e03095363f007b67a70de8174fe11c3b469bd1d7487",
       "src/main/java/gg/fotia/futureui/config/ChartValidator.java": "7107b25cccce680845d1e7eb20ba59e77d35c00e3a78fa06e1031c71b8262e87",
       "src/main/java/gg/fotia/futureui/asset/CanvasTexture.java": "bb3ffc71f20707ea7976c91d0019025d657b9c3d0f3afacc54133b54ca84add6",
       "src/main/java/gg/fotia/futureui/render/CanvasCharts.java": "0564d7db41197bfa59b92d41d541fd0df391903a80111aabd88ccffaa7ade528",
       "src/main/java/gg/fotia/futureui/render/CanvasImages.java": "0a4cde70d08d266ce15a5e3e6ff276d25a592325dfe1a3bcd87dcd02d868cd92",
       "src/main/java/gg/fotia/futureui/render/DialogRenderer.java": "61a47d84c238d34670407ba32cafb8adbe9b8c3c1f28fe4e5619242745850cd8",
-      "src/main/java/gg/fotia/futureui/layout/LayoutEngine.java": "651e24d0dcaab4fe146c30e3727dc0da0a7b0e2c9bd8911d3bcd692086090ef5",
+      "src/main/java/gg/fotia/futureui/layout/LayoutEngine.java": "1af43a8ab96adabf7921df97622ab0dd1604dba5f9e9fdbfa2ea83beb77d256a",
       "src/main/resources/templates/integrations/basictool/statistics.yml": "175f7084662ca6e4faf9481d46b46d936eb5df050ed0c1a5691c5963f099602c",
       "src/main/resources/templates/integrations/basictool/statistics-record.yml": "db76140e0ac899057933835b0c9240a8387e5d973207c056e2a73e94626eb493",
       "src/main/resources/templates/integrations/basictool/rank-card.yml": "191aff77b7e8a641c6072b88ed580beba551037f31f3aa1c50441c9d9fafd143",
@@ -84,7 +84,7 @@
       "src/main/resources/templates/integrations/fotiacosmetic/entry.yml": "34010abce30a883a71c5236e53c5950297a9fd3d9f4ea87e92756f4e512bd6a3",
       "src/main/resources/templates/integrations/fotiacosmetic/page.yml": "8c5f39326fcd4ba49e0eccc88d7424ac1c2403d1ab46a82d4388b1fc2449a626",
       "src/main/resources/templates/integrations/fotiacosmetic/preview.yml": "cea3f2b5db54137839ac0c76d8ca7201a68a9cabe87a9a7c19986753e7a7ef17",
-      "src/main/resources/defaults.list": "9d00ffee08b2cbc510e413a5b6107e501408c1d9f7e97f01dc19a02fec021b4a",
+      "src/main/resources/defaults.list": "155d4526dbfb0d04c6241de5d0fddfa65195fc18fd36c16bc598c4fe29705df0",
       "src/main/resources/templates/integrations/fotiacosmetic/entry_compact.yml": "f78302e8fe38c8718020afb09e3d65e05fe72cb2c9b579903b8d424fcd6c1739",
       "src/main/resources/templates/integrations/fotiacosmetic/page_compact.yml": "3b1764a7dce09e0e155ecabf459b9400e1f79bcba002f9f4b6955a34638250e5",
       "src/main/resources/templates/integrations/fotiacosmetic/preview_compact.yml": "5a6c2ba660265f26f5c1bba5573205e1280bafb2fc821e933be684e4936eb3ba",
@@ -112,7 +112,76 @@
       "src/main/resources/languages/en_us/integrations/fotiacosmetic.yml": "647310505c88f865f1026f791b6ce170efec00c0ea81f8d965701758e705e306",
       "src/main/resources/languages/en_us/integrations/fotiacosmetic-unified.yml": "5abd0349519b995fb581f62dae2905120a799f8879a02d437b1308194621501a",
       "src/main/resources/languages/zh_cn/integrations/fotiacosmetic-unified.yml": "91b283333d8928bff22a097b4618390a3e0a8bfb8a5045e6247b91cc10f0035b",
-      "src/main/java/gg/fotia/futureui/config/DefaultTemplateMigration.java": "4058c7ba1c403111b6731b797ba3f017c81f1a1d97739ac20f0cf4e3ef6b4e1b"
+      "src/main/java/gg/fotia/futureui/config/DefaultTemplateMigration.java": "4058c7ba1c403111b6731b797ba3f017c81f1a1d97739ac20f0cf4e3ef6b4e1b",
+      "src/main/resources/languages/en_us/messages.yml": "48e6f51f7d40037710a1f586086c274f02f7a2f8e39157aeefbd2ba67cc56f99",
+      "src/main/resources/languages/zh_cn/messages.yml": "89645ededb45d14fbb182fde804339550a0eb2861a28aa941c1d011e3514ba3d",
+      "src/main/java/gg/fotia/futureui/asset/CanvasAtlasCompiler.java": "a5b714b82b2a6467a4fa003bc8f2e0e3b1f8d8701d8b3b920480c09c65fed036",
+      "src/main/java/gg/fotia/futureui/asset/GlyphAllocation.java": "21d8c843bf9133fa81f2008258342db7a964366923fddb0ef0804cef182ec336",
+      "src/assembly/release.xml": "251a4e091d89b5169f2040ccf51dd8881119e217a056e5edf946c866b4f751cf",
+      "distribution/fotiachat/menus/color-menu.yml": "57935cff48f910e9eff15b04fa99fc6ff528457bfcac6ef93a0d7d6dbb54bf03",
+      "src/main/resources/menus/fotiachat/colors.yml": "d10a73f4b1750a18145298671681939ed3bae448d43cf75d3a042592a0956fad",
+      "src/main/resources/menus/fotiachat/colors_compact.yml": "05ef5273c70d7472d7306dbcc442432aa0f1ed114251e04cc20ff84a68837118",
+      "src/main/resources/templates/integrations/fotiachat/color.yml": "1444633ddeeb3c8a0790bd0b1d1f7a5738c8e95656f0e7ebf745a4a0bacbd533",
+      "src/main/resources/templates/integrations/fotiachat/page.yml": "a76795a5725bc7ec595d0871708e8658ab12ca7d3eb66989c61226d6f9a5e0e6",
+      "src/main/resources/templates/integrations/fotiachat/page_compact.yml": "f3392490d8790e53ba8e6e45d21412f64c5f2521f2ccd5d40e457beb98937085",
+      "src/main/resources/languages/zh_cn/integrations/fotiachat.yml": "a334613a8af2af3ff0a3448a214acbd97d593ea4ed3ea4489b51918d5ba5b329",
+      "src/main/resources/languages/en_us/integrations/fotiachat.yml": "23f1ff4dd842ed1b22f5354efc931fa2507acff7e64c0392658c4f62bfafbaf1",
+      "distribution/fotiacrates/futureui.yml": "62a6b70613f9ce8bfb9953a858859f65514e6e236c5a8bf3be645448e9e7f4ee",
+      "src/main/resources/assets/images/fotiacrates.yml": "daa6f5d7c7057dcdec343bf3c3115a5c8efaf61ed4848bf2261b3370b8f77a19",
+      "src/main/resources/menus/fotiacrates/compact.yml": "8b5fa61a48eb0a01b56755b4cb8bf58222e949e95d92fb574222bc4f29105c02",
+      "src/main/resources/menus/fotiacrates/standard.yml": "cc6ef90e117fc8aa15945e3bafd434b88f05f73f10c18b3e01e1409117c422ad",
+      "src/main/resources/templates/integrations/fotiacrates/compact.yml": "645cf54e2ccbbe281981f692281da6f328f5ef60166de633829db36a1be7c6dd",
+      "src/main/resources/templates/integrations/fotiacrates/frame_compact.yml": "e2484ed0ea9493bc736c537a1d350dce4380b66d765d634257652b7cf9211125",
+      "src/main/resources/templates/integrations/fotiacrates/frame_standard.yml": "80f5109da991e03c9870e0d6196be3a3ce4e77342a6a098bd4f1e8b7af799137",
+      "src/main/resources/templates/integrations/fotiacrates/reward_compact.yml": "01c9332232f150334ff53a8ca3265791e18cd86fb7e101d7ce2b283c5143957c",
+      "src/main/resources/templates/integrations/fotiacrates/reward_standard.yml": "e1837fc749d29b8cac65e0ad463f2f8eb6e813eb91ffe219a19d0334fd3a007b",
+      "src/main/resources/templates/integrations/fotiacrates/standard.yml": "99e66457a0c4f79ddc7a9172e28f8d2735614cb540df0785cee267c0db381123",
+      "src/main/resources/languages/zh_cn/integrations/fotiacrates.yml": "9174dbbe91e878913e1ba01882d68c67587b240bc5954805a69e93926d53f750",
+      "src/main/resources/languages/en_us/integrations/fotiacrates.yml": "8328522466a660a07fe99ba88eb2c63163482da43aad99f5090df5128d8e8f68",
+      "src/main/java/gg/fotia/futureui/asset/ViewportRegions.java": "32afd972a437b68e7572c6800885d437605626ec6f56db9172a969987fb696e7",
+      "src/main/java/gg/fotia/futureui/asset/ViewportAtlasCompiler.java": "540d1e00b1e995240243e5434e8ee0295fb9fcae94366b6592856ea63a2ea0ce",
+      "src/main/java/gg/fotia/futureui/config/ViewportValidator.java": "382d444f65c7da145ee0ceb581175a79aa22785aca4b91a23e0726d6b594f1e6",
+      "src/main/java/gg/fotia/futureui/render/CanvasViewport.java": "b6cea8ca687e5c9b0107850df216197d055f225a18bfd2654ce2e2c45efb515d",
+      "src/main/java/gg/fotia/futureui/render/ViewportMotion.java": "88408f1f883f34914911bfbabf49e4d684f0f6cc8b8007e2f6272b3c2cd18425",
+      "src/main/resources/assets/viewports.yml": "c8413a558399fa488147b9be8b5074ed142ee8535343187c09748cfc197e179d",
+      "src/main/java/gg/fotia/futureui/render/AnimationFrames.java": "a1f305c7f9332688d87545ef4960c37079e80f5f00523888c58953e7bf0d63b5",
+      "src/main/java/gg/fotia/futureui/asset/GlyphRegistry.java": "d32290f8f0cf42f5f79153a7c157f4fa7bc3c868c48b368a316ec3318a6b89a6",
+      "src/main/resources/templates/integrations/fotiacrates/result_compact.yml": "95256cfa692074f9c670e8f3459f3da15b4112ae3dbda1cc4bd6fb94764f39c3",
+      "src/main/resources/menus/fotiatags/compact.yml": "812f38036e2966f630cc5ce393dcb8211e4cb3931212433ae3cef00f0b397bde",
+      "src/main/resources/menus/fotiatags/input.yml": "4358a0006e6500eb48abc6115a35896c14596a3c41deb736f46022f5fedd518d",
+      "src/main/resources/menus/fotiatags/standard.yml": "e64643f561b722ef94cf5240bb195c3b4d92d5da3a2f28f90e0d290276048054",
+      "src/main/resources/templates/integrations/fotiatags/body_compact.yml": "136ffaafc6324095c6da4d03b955790bc2ea043e416acf387c28c1805c1a7f3f",
+      "src/main/resources/templates/integrations/fotiatags/body_standard.yml": "dd1e62a635658eb156a89fbded631764e91e797a163bd287cdc5a80c5ad32634",
+      "src/main/resources/templates/integrations/fotiatags/create_compact.yml": "00ce3b7d6dc51e62611384f968ce3a7aede0c73c0af3354dc91b22b0b358e905",
+      "src/main/resources/templates/integrations/fotiatags/create_standard.yml": "d9d97aa9ec89371b1d6fef6e344853ce103c7b082eda596254b08bd18c4664e6",
+      "src/main/resources/templates/integrations/fotiatags/delete_compact.yml": "db0e86cfb1c8ee315a68298c8986fc917a892cf9aa6602a893c82ef3b619d26a",
+      "src/main/resources/templates/integrations/fotiatags/delete_standard.yml": "795dcce0b126e21cc483c48923df3744aa5faf55dd83d0ea15c95a9cb2b592a6",
+      "src/main/resources/templates/integrations/fotiatags/detail_compact.yml": "a856b1364b4f5b8f97745ec7b63fc3fbe6416845d1f4d802c14f3e71e5181d8c",
+      "src/main/resources/templates/integrations/fotiatags/detail_standard.yml": "e144ccbcfa63ba89308a8b5329575b9257e11f5e5b6f3e05079b0b0d22a9fcf6",
+      "src/main/resources/templates/integrations/fotiatags/entry_compact.yml": "d51122587a998adaf3dfa3a862590b89baaf0fa84b4435b466e29e9cd10c026f",
+      "src/main/resources/templates/integrations/fotiatags/entry_standard.yml": "ed79ea64baa0a0fa79551170149f233b59e9fce70e9d07f9c77b32e532fad73a",
+      "src/main/resources/templates/integrations/fotiatags/list_compact.yml": "ee20e64a8e9bd381e89b5c519d803c20b25962c6059442e4135bb17cb129fa2b",
+      "src/main/resources/templates/integrations/fotiatags/list_standard.yml": "0eb48d4ba166ba24c501bbf653fe864086da913746eda991246fc3311a176f52",
+      "src/main/resources/templates/integrations/fotiatags/navigation_compact.yml": "e1cc3f2068e98c2934c3e2edb713cae01a0698f43ac756aecc3bc2187671e78f",
+      "src/main/resources/templates/integrations/fotiatags/navigation_standard.yml": "0633e2ebe0d1e7cb02b9485a71ded1fd3e8b0ff6ead1be146a1f906612d5dc94",
+      "src/main/resources/templates/integrations/fotiatags/page_compact.yml": "b48a2f75a48fefc91ea905ee035bef859c5449e95f6ca667678f9819f670b3dd",
+      "src/main/resources/templates/integrations/fotiatags/page_standard.yml": "e5afc5da5b462f0e8f90fcfb69a6362ec0293744114cac68520c45151ee767c9",
+      "src/main/resources/templates/integrations/fotiatags/purchase_compact.yml": "0f6e04573228e58d87678d7b5a82bc36cf9d9ac7c08f297c76ecb18075838912",
+      "src/main/resources/templates/integrations/fotiatags/purchase_standard.yml": "a7e60d7e1a99db95b7a8a372052299b573d91e10c7f2033d4fe7e663c175748c",
+      "distribution/fotiatags/futureui.yml": "5bb35b4819100671da698d9abdee2c4bafbf7ff1af6e49f44f6e870112e6ae85",
+      "distribution/fotiatags/menus/custom-tag-delete.yml": "4af04f8e2cc280f46cbc2d8720debf6a2d8c2f4f426252063b727b94f26d79fb",
+      "distribution/fotiatags/menus/custom-tag-detail.yml": "7f7463c62a8dfb91809b499b4eebe643d1e145d52f8b959be228c33170cebbff",
+      "distribution/fotiatags/menus/custom-tag-icons.yml": "d81ca78888054bb160fb0563bc9402f438a281d09da0bd9559cc989092b376d3",
+      "distribution/fotiatags/menus/custom-tag.yml": "07d78bb075881cc1ee5fd8578df71c97b8e0a2badf435a2c582f6c893fdea660",
+      "distribution/fotiatags/menus/gradient-purchase-confirm.yml": "1d678b51d0c596cf9d850f9ba66f2c75a8e1469f651d1c98f9d8f9077a9a7ca9",
+      "distribution/fotiatags/menus/gradient-shop.yml": "087c87f370f43ff0df997a17688b14839da224c93dc5b08584b79cd253248a93",
+      "distribution/fotiatags/menus/gradient-storage.yml": "4e90254213eeb6ba647bf74fdba252f2608cce0ed905728b282060b70c8d976d",
+      "distribution/fotiatags/menus/tag-select.yml": "fa89f707bd0d8d52ca7ade0a8144fae1290758b4d40bb68e138622caf17964ac",
+      "src/main/resources/assets/images/fotiatags.yml": "07c780e01f78d5e45f18d95a1b74e82a45aa51f7264389aa45c47f863c9878ac",
+      "src/main/resources/languages/zh_cn/integrations/fotiatags.yml": "51c2b857cd611dec7f922d3566139b318ad109bb189f251478392d76efe24490",
+      "src/main/resources/languages/en_us/integrations/fotiatags.yml": "0b2685c0d23d1d325c4ba63fd7ddc198c4be26a5c3b0c3f0f2b3b7b34282c8b1",
+      "src/main/resources/languages/en_us/menus/compact.yml": "7c35ad3d2796133daecbffcf5e2a486a29331ea454b67dfc43960ede14ad05cf",
+      "distribution/fotiacosmetic/menus/main.yml": "b419c02343d696f81293291f6f3904a27a72cbf57d86e85c1c2f00d77f1e3f98"
     },
     "verification": "已按当前源码核对能力；静态检查不代表运行时或多客户端兼容认证。",
     "feature_origin": "Includes the independent-theme and icon controls introduced in 1.1.3; current checkout labels the build beta."
@@ -409,7 +478,12 @@
     "value-skin",
     "empty-text",
     "background-image",
-    "background-size"
+    "background-size",
+    "region",
+    "visible-items",
+    "position",
+    "direction",
+    "motion"
   ],
   "components": [
     "button",
@@ -433,7 +507,8 @@
     "text-input",
     "toggle",
     "chart",
-    "raster"
+    "raster",
+    "viewport"
   ],
   "canvas_components": [
     "text",
@@ -447,7 +522,8 @@
     "list",
     "progress",
     "chart",
-    "raster"
+    "raster",
+    "viewport"
   ],
   "dialog_embedded_canvas_excluded": [
     "button",
@@ -1162,7 +1238,6 @@
         "messages.pack-building",
         "messages.pack-built",
         "messages.pack-download-unconfigured",
-        "messages.pack-missing",
         "messages.pack-prompt",
         "messages.pack-send-failed",
         "messages.pack-verification",
@@ -1832,7 +1907,6 @@
         "messages.pack-building",
         "messages.pack-built",
         "messages.pack-download-unconfigured",
-        "messages.pack-missing",
         "messages.pack-prompt",
         "messages.pack-send-failed",
         "messages.pack-verification",
@@ -2081,7 +2155,15 @@
     "metadata_note": "pack.yml is CraftEngine content metadata, not pack.mcmeta. Compatibility declarations do not adapt shaders.",
     "image_fragments": "assets/images/*.yml in filename order, then assets/images.yml overrides",
     "canvas_background": "background-image with background-size (default 72) on a Canvas node; drawn before its content, not clickable",
-    "rectangular_images": "size is display height, display width follows aspect ratio; image must fit its allocated box"
+    "rectangular_images": "size is display height, display width follows aspect ratio; image must fit its allocated box",
+    "glyph_allocation": {
+      "preserves_existing_ids": true,
+      "ranges": [
+        "U+E000..U+F8FF",
+        "U+F0000..U+FFFFD"
+      ],
+      "behavior": "Shared bitmap allocator uses supplementary private-use code points after the BMP private-use range is full. Fixed spacing and raster fonts remain independent."
+    }
   },
   "diagnostics": {
     "validate": "/fui validate",
@@ -2267,11 +2349,15 @@
     "hosting": "external requires an uploaded HTTP(S) download URL; no automatic upload or embedded HTTP server",
     "empty_url": "startup and generation work; downloading waits for a configured URL",
     "verification": "the hosted bytes must match the verified local ZIP; keep fonts, shaders, overlays and build receipt",
-    "pack_fallback": [
-      "wait",
-      "native"
+    "native": "requires a Dialog-capable client; does not preserve Canvas artwork",
+    "menu_receipt_gate": false,
+    "menu_open_delivery": "Opening or refreshing a menu never requests a pack, waits for a receipt, or downgrades due to a missing receipt.",
+    "retired_menu_gate_options": [
+      "resources.require-pack",
+      "compatibility.pack-fallback",
+      "fallbacks.pack"
     ],
-    "native": "requires a Dialog-capable client; does not preserve Canvas artwork"
+    "receipt_usage": "Delivery deduplication, diagnostics and refreshing an open menu after a successful receipt only."
   },
   "optional_integrations": {
     "BasicTool": {
@@ -2654,6 +2740,472 @@
         "explicit_material_replaces_provider_icon": true,
         "canvas_uses_item_models": false
       }
+    },
+    "FotiaChat": {
+      "owner": "FotiaChat",
+      "owner_version": "1.1.5 with the FutureUI color adapter",
+      "required_api": [
+        "FutureUIService.canRender",
+        "FutureUIService.isOpen",
+        "RasterImage"
+      ],
+      "configured_in": "plugins/FotiaChat/menus/color-menu.yml",
+      "engine_field": "ui-engine",
+      "engines": [
+        "inventory",
+        "futureui"
+      ],
+      "default_engine": "inventory",
+      "options": {
+        "menu": "fotiachat/colors",
+        "page-size": 9,
+        "default-layout": "standard",
+        "show-locked": true,
+        "preview-text": "lang:color.preview-text",
+        "compact": {
+          "menu": "fotiachat/colors_compact",
+          "page-size": 4
+        }
+      },
+      "data_sources": [
+        "fotiachat:colors"
+      ],
+      "actions": [
+        "fotiachat:colors"
+      ],
+      "data_views": [
+        "page",
+        "entries"
+      ],
+      "operations": [
+        "opened",
+        "closed",
+        "select",
+        "reset",
+        "filter",
+        "previous",
+        "next",
+        "layout",
+        "close"
+      ],
+      "filters": [
+        "all",
+        "single",
+        "effects",
+        "available"
+      ],
+      "effects": [
+        "GRADIENT",
+        "RAINBOW"
+      ],
+      "page_fields": [
+        "current-name",
+        "has-current",
+        "preview",
+        "page",
+        "pages",
+        "count",
+        "previous",
+        "next",
+        "empty",
+        "filter",
+        "feedback"
+      ],
+      "entry_fields": [
+        "id",
+        "name",
+        "selected",
+        "available",
+        "swatch"
+      ],
+      "feedback": [
+        "preview",
+        "saved",
+        "reset"
+      ],
+      "requires_owner_session": true,
+      "session_argument": "fotiachat.session",
+      "registered_lazily": true,
+      "data_policy": {
+        "cache": false,
+        "paginate": false,
+        "pagination_owner": "FotiaChat"
+      },
+      "theme": "adventure",
+      "swatch": [
+        72,
+        9
+      ],
+      "layout_profiles": {
+        "standard": {
+          "canvas": [
+            540,
+            261
+          ],
+          "page_size": 9,
+          "columns": 3
+        },
+        "compact": {
+          "canvas": [
+            252,
+            180
+          ],
+          "page_size": 4,
+          "columns": 2
+        }
+      },
+      "layout_preference": {
+        "pdc": "fotiachat:color-menu-layout",
+        "automatic_window_detection": false,
+        "engine_admin_only": true
+      },
+      "selection": "Original ColorManager permission checks and persistence; direct application; no chat broadcast for previews.",
+      "locked": "Grayscale swatch, disabled button with localized name prefix; show-locked=false hides it.",
+      "permission": "fotiachat.color and each configured color permission, checked again on action",
+      "fallback": "Original inventory menu only when the optional service, requested menu or client renderer is unavailable; not after a permission or open-event rejection.",
+      "scope": "Chat color menu only. Existing item, inventory and ender-chest snapshots remain unchanged. Legacy Layout/Icons are inventory-only.",
+      "reference": "fotiachat.md"
+    },
+    "FotiaCrates": {
+      "owner": "FotiaCrates",
+      "owner_version": "1.1.21 with FutureUI adapter",
+      "configured_in": "plugins/FotiaCrates/futureui.yml",
+      "engine_field": "ui-engine",
+      "engines": [
+        "inventory",
+        "futureui"
+      ],
+      "default_engine": "inventory",
+      "data_sources": [
+        "fotiacrates:menu"
+      ],
+      "actions": [
+        "fotiacrates:menu"
+      ],
+      "data_views": [
+        "page",
+        "entries",
+        "frames"
+      ],
+      "requires_owner_session": true,
+      "session_argument": "fotiacrates.session",
+      "registered_lazily": true,
+      "operations": [
+        "opened",
+        "closed",
+        "tab",
+        "previous",
+        "next",
+        "less",
+        "more",
+        "maximum",
+        "layout",
+        "draw",
+        "close"
+      ],
+      "tabs": [
+        "preview",
+        "history",
+        "results"
+      ],
+      "views": [
+        "preview",
+        "history",
+        "spin",
+        "results"
+      ],
+      "feedback": [
+        "ready",
+        "preparing",
+        "spinning",
+        "braking",
+        "revealed",
+        "settling",
+        "complete",
+        "failed"
+      ],
+      "options": {
+        "default-layout": "standard",
+        "history-limit": 100,
+        "animation": {
+          "enabled": true,
+          "frame-ticks": 1,
+          "hold-ticks": 20,
+          "max-seconds": 15,
+          "travel-slots": 12,
+          "slowdown-power": 3.0,
+          "avoid-adjacent-duplicates": true,
+          "direction": "left",
+          "landing-spread": 0.35
+        }
+      },
+      "layout_profiles": {
+        "standard": {
+          "menu": "fotiacrates/standard",
+          "canvas": [
+            540,
+            279
+          ],
+          "page_size": 6,
+          "columns": 6,
+          "reel_slots": 7
+        },
+        "compact": {
+          "menu": "fotiacrates/compact",
+          "canvas": [
+            252,
+            180
+          ],
+          "page_size": 2,
+          "columns": 2,
+          "quick_actions": "Quantity +/- and draw; single/max shortcuts are available in the standard profile.",
+          "reel_slots": 5,
+          "single_result": "Full-width 252 x 72 card: icon on left, localized heading, name and rarity on right."
+        }
+      },
+      "layout_preference": {
+        "pdc": "fotiacrates:crate-menu-layout",
+        "automatic_window_detection": false,
+        "engine_admin_only": true
+      },
+      "theme": "adventure",
+      "icons": "Registered PNG image IDs: crateId/rewardId override, lowercase base-material mapping, then fallback. CE/IA IDs, ItemStack and models are not automatically rendered. FutureUI owns images and resource-pack delivery; FotiaCrates owns only mappings.",
+      "settlement": "Original OpenCommand, CrateOpenService and MultiOpenService; animation displays committed display rewards, result page shows actual rewards after original completion.",
+      "chance": "Original preview sort and base percentage/weight/hidden rules; not player-adjusted conditional probability.",
+      "pity": "Nearest independent tier counter and rarity, not shared legacy count.",
+      "history": "Asynchronous original history service; validates others permission and rejects stale callbacks.",
+      "animation": "Pixel-positioned horizontal viewport with clipped icons, text and cards; frame window has visible slots plus two transition items. One random landing offset per draw is included in the deceleration path; selected marks the committed winning card under the pointer, not a fixed list index. Default layouts omit the animation progress bar and preserve content height; the standard pity indicator remains.",
+      "scope": "Player reward preview, draws, GUI animation, results and history. Inventory admin editing and drag/drop remain original.",
+      "limits": {
+        "page-size": [
+          1,
+          36
+        ],
+        "history-limit": [
+          1,
+          500
+        ],
+        "frame-ticks": [
+          1,
+          20
+        ],
+        "hold-ticks": [
+          0,
+          100
+        ],
+        "max-seconds": [
+          1,
+          60
+        ],
+        "reel-slots": [
+          3,
+          5,
+          7,
+          9
+        ],
+        "travel-slots": [
+          4,
+          240
+        ],
+        "slowdown-power": [
+          1.0,
+          5.0
+        ],
+        "landing-spread": [
+          0,
+          0.4
+        ]
+      },
+      "reference": "fotiacrates.md",
+      "results": "Single result uses a full-width card in both profiles. Batch results keep pagination and display draw-index (1-based across the batch), not preview probability."
+    },
+    "FotiaTags": {
+      "owner": "FotiaTags",
+      "owner_version": "1.1.2 with FutureUI adapter",
+      "configured_in": "plugins/FotiaTags/menus/<view>.yml; plugins/FotiaTags/futureui.yml",
+      "engine_field": "ui-engine",
+      "engines": [
+        "inventory",
+        "futureui"
+      ],
+      "default_engine": "inventory",
+      "data_sources": [
+        "fotiatags:menu"
+      ],
+      "actions": [
+        "fotiatags:menu"
+      ],
+      "data_views": [
+        "page",
+        "entries"
+      ],
+      "requires_owner_session": true,
+      "session_argument": "fotiatags.session",
+      "registered_lazily": true,
+      "operations": [
+        "opened",
+        "closed",
+        "close",
+        "navigate",
+        "previous",
+        "next",
+        "layout",
+        "filter",
+        "select",
+        "clear",
+        "input",
+        "submit",
+        "cancel-input",
+        "confirm",
+        "equip",
+        "delete",
+        "back",
+        "footer"
+      ],
+      "views": [
+        "tag-select",
+        "custom-tag",
+        "custom-tag-icons",
+        "custom-tag-detail",
+        "custom-tag-delete",
+        "gradient-storage",
+        "gradient-shop",
+        "gradient-purchase-confirm"
+      ],
+      "filters": [
+        "all",
+        "normal",
+        "custom",
+        "cycle"
+      ],
+      "options": {
+        "default-layout": "standard",
+        "input-menu": "fotiatags/input",
+        "icons.fallback": "paper"
+      },
+      "layout_profiles": {
+        "standard": {
+          "menu": "fotiatags/standard",
+          "canvas": [
+            540,
+            315
+          ],
+          "page_size": 4,
+          "columns": 2
+        },
+        "compact": {
+          "menu": "fotiatags/compact",
+          "canvas": [
+            252,
+            216
+          ],
+          "page_size": 2,
+          "columns": 1
+        }
+      },
+      "layout_preference": {
+        "pdc": "fotiatags:futureui-layout",
+        "automatic_window_detection": false,
+        "engine_admin_only": true
+      },
+      "theme": "adventure",
+      "refresh_ticks": 4,
+      "limits": {
+        "page-size": [
+          1,
+          36
+        ]
+      },
+      "page_fields": [
+        "busy",
+        "can-clear",
+        "can-confirm",
+        "can-create",
+        "can-delete",
+        "can-effects",
+        "can-tags",
+        "compact",
+        "count",
+        "currency",
+        "current",
+        "current-empty",
+        "detail-view",
+        "draft-complete",
+        "draft-icon-name",
+        "draft-image",
+        "draft-locked",
+        "draft-prefix",
+        "draft-preview",
+        "draft-suffix",
+        "duration-unit",
+        "duration-value",
+        "empty",
+        "filter",
+        "list-view",
+        "next",
+        "owned",
+        "page",
+        "pages",
+        "prefix-editable",
+        "prefix-empty",
+        "previous",
+        "price",
+        "purchase-state",
+        "refund",
+        "refund-currency",
+        "suffix-editable",
+        "suffix-empty",
+        "target-exists",
+        "target-image",
+        "target-name",
+        "target-prefix",
+        "target-preview",
+        "target-selected",
+        "target-suffix",
+        "view"
+      ],
+      "entry_fields": [
+        "id",
+        "kind",
+        "name",
+        "preview",
+        "image",
+        "selected",
+        "owned",
+        "shop",
+        "permanent",
+        "days",
+        "hours",
+        "price",
+        "currency",
+        "enabled"
+      ],
+      "duration_units": [
+        "permanent",
+        "days",
+        "hours",
+        "minutes",
+        "seconds"
+      ],
+      "input": {
+        "renderer": "dialog",
+        "field": "value",
+        "initial_argument": "fotiatags.input",
+        "part_argument": "fotiatags.part",
+        "submitted_variable": "input.value",
+        "parts": [
+          "prefix",
+          "suffix"
+        ]
+      },
+      "business": "Original managers, persistence, payment snapshots and operation locks; custom purchase and refund, effect unlock and selection retain original validation. Pending completions never reopen a closed session.",
+      "icons": "FutureUI image IDs mapped by tag/<id>, icon/<id> and effect/<id>; no separate FotiaTags pack. ItemStack/model/CustomModelData is not automatically rasterized. Unresolved image text markers fall back to display name.",
+      "language": "FutureUI locale chain for UI, FotiaTags language configuration for original business messages; configured tag/effect names retain their formatting.",
+      "scope": "Eight player menus. Six administrator inventory menus remain original. Custom tags and gradients still require original enabled flags and permissions.",
+      "fallback": "Missing FutureUI/menu/client render capability falls back to original inventory. An open-event or permission rejection is not bypassed.",
+      "alignment": "Single-line 27px panels, 9px insets, equal detail action baselines; compact icon and text cards have equal heights. No outer frame.",
+      "reference": "fotiatags.md",
+      "text_formatting": "Automatic custom-tag wrappers are parsed independently of body styles; original display-wrapper enabled/left/right settings apply. Animated custom bodies are colored before wrapping, including display and PAPI paths. Current-equipped UI uses the selected effect."
     }
   },
   "charts": {
@@ -2755,6 +3307,73 @@
       626,
       662,
       698
-    ]
+    ],
+    "unconditional_close_during_refresh": "A plain Canvas button with only {type: close} and no enabled/requirements accepts callbacks from prior frames of the same active session. Other actions retain frame-token validation."
+  },
+  "viewports": {
+    "renderer": "standalone canvas",
+    "display_only": true,
+    "axis": "horizontal",
+    "registered_in": "assets/viewports.yml",
+    "region_fields": [
+      "canvas-width",
+      "left",
+      "width"
+    ],
+    "max_regions": 64,
+    "geometry_must_match": true,
+    "fields": [
+      "region",
+      "height",
+      "visible-items",
+      "position",
+      "direction",
+      "gap",
+      "children",
+      "motion"
+    ],
+    "position_units": "fractional item strides",
+    "directions": [
+      "left",
+      "right"
+    ],
+    "visible_items": [
+      1,
+      32
+    ],
+    "max_children": 256,
+    "motion": {
+      "from": 0,
+      "to": 1,
+      "duration-ticks": 80,
+      "delay-ticks": 0,
+      "interval-ticks": 1,
+      "easing": [
+        "linear",
+        "ease-in",
+        "ease-out",
+        "ease-in-out"
+      ],
+      "loop": false
+    },
+    "limits": {
+      "position": [
+        -65536,
+        65536
+      ],
+      "duration-ticks": [
+        1,
+        12000
+      ],
+      "delay-ticks": [
+        0,
+        12000
+      ],
+      "interval-ticks": [
+        1,
+        20
+      ]
+    },
+    "refresh": "Server tick updates; no client FPS guarantee. Reload the generated pack after changing regions."
   }
 }

@@ -4,6 +4,7 @@ import re
 from .io import dynamic, merge, walk
 from .logic import actions, condition, fields, link, number
 from .layout import measure
+from .viewports import registry as viewport_registry, check as check_viewports
 
 
 def geometry(work, node, path):
@@ -145,6 +146,7 @@ def components(work, nodes, renderer, path, ids, depth=0, embedded=False):
 
 
 def check_menus(work):
+    regions = viewport_registry(work)
     if not work.files:
         work.report.error("root", "未发现可检查的 FutureUI 配置文件")
     for ident, raw in work.groups["menus"].items():
@@ -174,6 +176,7 @@ def check_menus(work):
         for key in ("on-open", "on-close"):
             actions(work, menu.get(key, []), path + "." + key)
         components(work, menu.get("components", []), renderer, path + ".components", set())
+        check_viewports(work, menu, path, regions)
         if renderer == "canvas":
             if not dynamic(layout.get("width", 576)):
                 measure(work, menu.get("components", []), layout, int(layout.get("width", 576)), path)

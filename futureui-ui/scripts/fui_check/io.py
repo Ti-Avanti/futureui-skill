@@ -91,7 +91,7 @@ class Workspace:
             paths = []
             for group in (*self.GROUPS, "languages"):
                 paths.extend((directory / group).rglob("*.yml"))
-            paths.extend(directory / p for p in ("config.yml", "assets/images.yml", "assets/theme.yml", "assets/pack.yml", "assets/versions.yml") if (directory / p).is_file())
+            paths.extend(directory / p for p in ("config.yml", "assets/images.yml", "assets/theme.yml", "assets/pack.yml", "assets/versions.yml", "assets/viewports.yml") if (directory / p).is_file())
             paths.extend((directory / "assets/themes").glob("*.yml"))
             paths.extend((directory / "assets/images").glob("*.yml"))
             for path in sorted(set(paths)):
@@ -103,7 +103,7 @@ class Workspace:
                     continue
                 if directory == self.root:
                     self.changed.add(rel)
-                shared = rel.startswith(("languages/", "assets/themes/", "assets/images/")) or rel in {"config.yml", "assets/images.yml", "assets/theme.yml", "assets/pack.yml", "assets/versions.yml"}
+                shared = rel.startswith(("languages/", "assets/themes/", "assets/images/")) or rel in {"config.yml", "assets/images.yml", "assets/theme.yml", "assets/pack.yml", "assets/versions.yml", "assets/viewports.yml"}
                 self.files[rel] = merge(self.files.get(rel, {}), value) if shared else value
                 self.origins[rel] = path
         for rel, value in self.files.items():

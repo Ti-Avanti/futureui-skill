@@ -21,6 +21,9 @@ description: 为 Minecraft FutureUI 创建、修改和检查自定义菜单。�
 | 所有菜单的结构、控件和布局 | [布局与风格](references/layout-and-style.md) |
 | 权限、复杂操作、复用函数、交易 | [动作与条件](references/actions-and-conditions.md) |
 | 商店、购物车、物品提供器、BasicTool / FotiaCosmetic 可选菜单接管 | [商店与集成](references/commerce-and-integrations.md) |
+| FotiaChat 聊天颜色菜单接管 | [FotiaChat 颜色菜单](references/fotiachat.md) |
+| FotiaCrates 奖池、动画、结果和历史接管 | [FotiaCrates 抽奖菜单](references/fotiacrates.md) |
+| FotiaTags 称号、创建及动态效果菜单接管 | [FotiaTags 玩家菜单](references/fotiatags.md) |
 | 变量、PAPI、多语言、输入与持久化 | [变量与语言](references/variables-and-language.md) |
 | 图片、主题、字体、资源包兼容 | [资源与校验](references/assets-and-validation.md) |
 | 从可用示例改造 | [示例索引](references/examples.md)，只打开对应页面和依赖 |
@@ -37,7 +40,9 @@ description: 为 Minecraft FutureUI 创建、修改和检查自定义菜单。�
 
 ## 必须保留的实现约束
 
-- Canvas 支持文本、图片、按钮、toggle、进度、chart 和布局容器；chart 可绘制横条、像素环与堆叠比例。容器可用 background-image 叠放效果预览，图片按真实宽高比居中。按钮组可用列表变量、条件分支与 states 实现多选。原生文本框、数字输入、slider、checkbox、select、multi-select 放在 Dialog。Dialog 内嵌 Canvas 是展示区，按钮和输入控件放在展示区外。
+- Canvas 支持文本、图片、按钮、toggle、进度、chart、viewport 和布局容器；chart 可绘制横条、像素环与堆叠比例。容器可用 background-image 叠放效果预览，图片按真实宽高比居中。按钮组可用列表变量、条件分支与 states 实现多选。原生文本框、数字输入、slider、checkbox、select、multi-select 放在 Dialog。Dialog 内嵌 Canvas 是展示区，按钮和输入控件放在展示区外。
+- 连续横向展示使用 `viewport`，先注册 assets/viewports.yml 的静态裁切几何，再绑定小数 position 或 motion 插值；图标、文字和底板共同移动。仅用于独立 Canvas 的只读区域，按钮置于外部；字段、循环编排和刷新限制见布局参考。
+- 文字底板与文字共用同一网格：单行推荐 `height: 27`、`padding: 9`、`vertical-align: center`。不要使用 18 高的独立单行底板并假定能严格居中；多行文本按实际行数 × 9 加上下留白计算，图文区域还须核对图片规格与高度差。
 - Canvas 的 `height/gap/padding/min-height` 是 9 的倍数。宽度、列数、图片尺寸等具体约束见能力清单。不要写 CSS、任意坐标、原生按钮单独皮肤等不存在的属性。
 - 包含动态列表或互斥可见分支的容器优先使用 `min-height`。启动校验按每个列表一个条目采样，尚无玩家上下文，互斥分支也会共同计高；不要用其中一个分支的高度写死父容器。离线工具采用相同采样规则，实际多条数据仍需按配置的条数和尺寸检查。
 - 原生 Dialog 按钮没有独立的 `height/skin/disabled-skin`；统一外观由 `assets/theme.yml` 的 `native-widgets` 决定，这也会影响其他使用原版按钮的界面。
@@ -48,6 +53,10 @@ description: 为 Minecraft FutureUI 创建、修改和检查自定义菜单。�
 - 所有新增可见文案进入语言文件，保持占位符一致；沿用客户端语言和 FotiaTranslator 的选择链。默认提供 `zh_cn`、`en_us`，用户指定语言时以其需求为准。使用 UTF-8 无 BOM，格式文本加 `<!i>`，兼容 `&`、`§` 和 MiniMessage。
 - 原图尺寸与 GUI 显示尺寸不同；PNG、分行整除、图片注册和资源命名遵守资源参考。保留字体/着色器的内部标记像素，不对生成资源做批量调色或压缩改色。
 - 使用当前版本证实存在的扩展和客户端兼容方案。未知能力说明缺口；不要虚构配置、自动改插件源码或将计划中的覆盖层宣称为已经支持。
+- 菜单打开不校验玩家的资源包加载回执，也不因缺少回执等待、重发或降级。不要生成已停用的 require-pack、pack-fallback 或 fallbacks.pack 配置；资源包分发、客户端版本支持及权限条件仍按各自配置执行。
+- FotiaChat 颜色菜单由原 color-menu.yml 的 ui-engine 选择，默认 inventory。FutureUI 接管从 `/chatcolor` 进入，读取 colors.yml 并调用原 ColorManager；提供标准／紧凑布局、真实色条、权限状态和预览，具体配置及 `fotiachat:colors` 会话契约见专门参考。颜色菜单不接管物品快照，不复制原 Layout / Icons 的任意动作。
+- FotiaCrates 由其 futureui.yml 的 ui-engine 选择，默认 inventory。`fotiacrates:menu` 接管玩家显示，原服务负责扣钥匙、保底和结算；动画展示已确定奖励，结果不能统一承诺已进入背包。历史异步读取，标准／紧凑布局手动切换；默认滚动区横向铺满、分别展示 7／5 格，信息置顶、操作置底。格数和缓动配置、字段、图标映射和生命周期见专门参考。
+- FotiaTags 的八个玩家页面由各自 `menus/<页面>.yml` 的 `ui-engine` 选择，默认 `inventory`。`fotiatags:menu` 只适配显示和经过会话校验的动作，原模块开关、权限、扣款、退款、持久化及操作锁继续生效。标准／紧凑布局和前后缀表单共用原草稿；管理员菜单保留原界面，具体契约见 FotiaTags 参考。
 - BasicTool 接管由管理员在原菜单 YAML 的 `Options.ui-engine` 选择，默认 `inventory`，可选 `futureui`。从 BasicTool 原命令进入并复用其权限、条件和业务动作；`basictool:*` 数据源和动作需要对应适配版本与有效会话，不能当作 FutureUI 内置数据源或直接打开的独立演示页。
 - 面向玩家使用“恢复默认”“使用通用设置”等结果明确的文案；不要把“继承”“执行”等实现术语作为唯一按钮标签。设置仅在实际布尔值和允许值检查通过时显示滑块，轨道和说明只读；不能把缺失、未接入或不同来源的混合状态当作关闭。
 - BasicTool 新设置工作区使用 `settings/panel`、`settings/picker` 与固定六分类导航，分类内容由 BasicTool 的 `settings-ui.yml` 定义。布尔直接切换，少量枚举行内选择，较多选项才进入 picker；范围选择和恢复确认在当前工作区完成。恢复按钮使用提供器返回的 `reset-click`，不要把新工作区的普通右键轮换误当成恢复操作。新主题为 `basictool-settings`，默认画布宽 540、设置每页 6 项；不声称原版客户端支持窗口尺寸自动检测。

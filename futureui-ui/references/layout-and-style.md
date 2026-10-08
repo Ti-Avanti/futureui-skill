@@ -53,6 +53,7 @@ components:
 | 数据图表 | chart | chart-type: bars/ring/stacked；series、max、row-height、value-skin、empty-text |
 | 场景预览 | 容器 + background-image | background-size 为图片显示高度，内容叠在图片上；文字保持独立可翻译 |
 | 动态内容 | list | source、item、layout、page-size、paginate、cache |
+| 连续横向展示带 | viewport | region、height、visible-items、position 或 motion、direction、gap、children |
 | Dialog 文本 | text | 可用有背景的文本板；长文案交给文本换行 |
 | 原生文本输入 | text-input | id 对应 input.id；label、initial、max-length、validation；可 multiline |
 | 数字输入 | number-input | min、max、step、initial、integer，提交校验 |
@@ -69,7 +70,7 @@ components:
 
 - Canvas 的 height、gap、padding、min-height：0..2043 且是 9 的倍数。实际可读文本/按钮需要正高度。
 - 组件 width：1..1024；columns：1..9；布局嵌套不超过 20 层。
-- 默认 Canvas 按钮 27 高，可用 36 高主操作；文本一行基础高 9，数值板应计算 padding。
+- 单行 Canvas 按钮和数值底板推荐 27 高；文本一行基础高 9，9 像素上下内边距可形成对称留白。绘制纵坐标落在 9 像素网格，18 或 36 高的单行区域无法严格对称居中，不能只写 vertical-align: center 就忽略网格。多行文字的高度按实际行数 × 9 加上下留白计算；例如双行 18 加 9+9 留白为 36 高。卡片可把多行放在共同面板内，各自使用 9 高文本行及明确间距，避免为每行叠不对称底板。
 - 子容器写死 height 时必须装得下 children；顶部和底部 padding 都计入。
 - 启动校验会给每个 list 展开一个 item 样本及 after-items，保留列表的 layout、尺寸和间距；此时没有玩家上下文，visible 互斥的兄弟节点仍会同时计入高度。动态内容的父容器优先设置 min-height，不要把 height 写成某一个可见分支的高度。例如 scope_area 的按钮和说明各高 27，静态合计为 54，父容器应使用 min-height: 27；实际只显示一项时仍保持 27 高。离线检查器采用相同单项样本规则，不能由静态通过推断任意数据条数都能放下。
 - 图片显示高度要在主题 `canvas.image-sizes` 中生成；默认最大 144。注册 height 不能代替显示 size。
@@ -169,3 +170,44 @@ ring/stacked 图例优先使用 36 像素行距；高度不足时压缩为 27 �
 `layout.exit-button` 也参与悬停定位：有退出栏和无退出栏采用不同的原生正文尺寸，随附着色器以已登记正文宽度、原生一像素边线与水平位置识别焦点框，不依赖固定纵向位置；GUI 尺寸向上取整，窄窗口考虑原生容器左侧夹紧，不需要开启背景来遮挡。更新此能力必须同时更新插件和共享 shader 资源。进入原生滚动区时当前实现会隐藏高亮以避免错位，因此常规 Canvas 应按实际 GUI 尺寸控制高度；无退出栏建议满足 `画布高度 + 56 <= GUI 高度`，有退出栏为 `画布高度 + 74 <= GUI 高度`。
 
 原生单画布容器除 `layout.width` 外额外需要 52 像素水平空间。以不裁切容器为目标时，应满足 `画布宽度 + 52 <= GUI 宽度`；不要用物理窗口像素直接代替 GUI 逻辑像素。配置中改变画布宽度时，按资源参考核对 `canvas_focus.glsl` 的正文宽度列表（画布宽度 + 32）；此检测属于资源包，不是主题背景。
+
+## 连续横向滚动
+
+`viewport` 用于独立 Canvas 的只读展示区域，支持图片、文字、底板、进度、图表、raster、布局和动态列表；移动区域内不放按钮、输入框或嵌套 viewport，操作控件放在外部固定区域。它不是鼠标滚轮列表，也不是 Dialog 的原生滚动条。
+
+先在 `assets/viewports.yml` 注册裁切几何（最多 64 项）：
+
+```yaml
+demo_scroll:
+  canvas-width: 540
+  left: 0
+  width: 540
+```
+
+canvas-width 是整个菜单画布宽度，left 是该区域相对画布的实际左边缘，width 是实际分配宽度；均为静态整数，区域必须落在画布内。相同几何可以跨菜单复用，右侧分区可配置对应的非零 left。插件会在绘制时核对布局与注册几何，错配会报错，不会静默显示错位内容。修改区域后需要 `/fui reload` 并加载新资源包。源着色器保持可编辑，生成器在共享 `fui_position`/`fui_fragment` 接口接入裁切；自定义共享着色器须保留这些接口。不得清除生成的低 alpha 锚点像素。
+
+```yaml
+id: gallery
+type: viewport
+region: demo_scroll
+height: 81
+visible-items: 3
+direction: left
+gap: 9
+motion:
+  from: 0
+  to: 5
+  duration-ticks: 120
+  interval-ticks: 1
+  easing: linear
+  loop: true
+children: []  # 填入卡片或不带 layout 的 list；完整配置见 demo_scroll.yml
+```
+
+- height 为固定区域高度，必须是正的 9 的倍数；每个实际子项必须装得下。父布局按此高度计量，横向内容不撑大整页。
+- visible-items 为 1–32 的整数，决定同屏容量，gap 仍为 9 的倍数；按区域宽度均分卡片宽度。只读条目最多 256 项，画面外的完整卡片跳过绘制，边缘的图标、文字和底板逐像素裁切。
+- direction 为 left（向左移动，列表从左到右排列）或 right（向右移动，列表从右到左排列）。
+- `position` 为小数项位移，1 表示移动一个卡片宽度加间距，允许变量，范围 -65536..65536。由提供器更新位置时使用它，刷新频率由提供器或菜单配置控制。
+- `position` 与 `motion` 二选一。motion 以本次菜单会话打开时间为起点；from/to 支持变量，duration-ticks 为 1..12000、delay-ticks 为 0..12000；easing 支持 linear/ease-in/ease-out/ease-in-out，loop 默认 false。interval-ticks 必须为静态整数 1..20，默认 1，自动参与菜单刷新。重新打开菜单才重置计时，普通刷新不重置。
+- 循环到终点会回到起点。要无缝循环，条目末尾需接上首屏相同的内容；不要把任意不重复列表写成“自动无缝”。starter/demo_scroll 已展示这种编排。
+- 位移按像素更新；服务端默认最高每 tick 一次（正常 20 TPS），不承诺客户端帧率插值或 60 FPS 动画。保持整个菜单宽度、固定控件位置和资源包版本覆盖层一致。
